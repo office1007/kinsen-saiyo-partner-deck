@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>採用パートナー｜株式会社琴線</title>
+<style>
+  :root{
+    --crimson:#A81F26;
+    --crimson-deep:#7E1319;
+    --crimson-wash:#FBF2F2;
+    --ink:#1A1818;
+    --ink-soft:#5A5555;
+    --ink-faint:#948E8E;
+    --paper:#FFFFFF;
+    --line:#E3DEDE;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#D9D9D9;
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Noto Sans JP",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .page-scroll{width:100%;overflow-x:auto;padding:8mm 0;}
+  .sheet{
+    width:210mm;height:297mm;margin:0 auto;
+    background:var(--paper);
+    box-shadow:0 2px 20px rgba(0,0,0,0.2);
+    padding:0 15mm 0;
+    display:flex;flex-direction:column;
+    font-size:10.5px;line-height:1.6;
+  }
+
+  /* ---------- 共通見出し ---------- */
+  .sec-head{display:flex;align-items:baseline;gap:3mm;margin-bottom:3mm;}
+  .sec-head h2{
+    font-size:15px;margin:0;font-weight:700;letter-spacing:0.01em;
+    white-space:nowrap;
+  }
+  .sec-head .en{
+    font-size:8px;letter-spacing:0.16em;color:var(--ink-faint);
+    text-transform:uppercase;font-weight:600;
+  }
+  .sec-head::after{content:"";flex:1;height:1px;background:var(--line);}
+  p{margin:0;}
+
+  /* ---------- ヘッダー ---------- */
+  .topbar{height:3mm;background:var(--crimson);margin:0 -15mm;}
+  .head{padding:9mm 0 8mm;text-align:center;}
+  .head .brand{font-size:9.5px;letter-spacing:0.22em;color:var(--ink-faint);margin-bottom:3mm;}
+  .head h1{font-size:33px;margin:0;font-weight:700;letter-spacing:0.04em;line-height:1;}
+  .head .en{color:var(--crimson);font-size:10.5px;letter-spacing:0.14em;margin-top:2.5mm;}
+  .head .catch{
+    font-size:16px;font-weight:700;line-height:1.55;margin-top:4mm;letter-spacing:0.01em;
+  }
+  .head .catch em{font-style:normal;color:var(--crimson);}
+
+  /* ---------- 実績バンド ---------- */
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    background:var(--crimson);color:#fff;
+    margin-bottom:10mm;
+  }
+  .stat{padding:4mm 2mm;text-align:center;position:relative;}
+  .stat + .stat::before{
+    content:"";position:absolute;left:0;top:25%;height:50%;
+    width:1px;background:rgba(255,255,255,0.3);
+  }
+  .stat .num{font-size:21px;font-weight:700;line-height:1;display:block;letter-spacing:0.01em;}
+  .stat .num small{font-size:11px;font-weight:700;}
+  .stat .label{font-size:8.4px;color:rgba(255,255,255,0.85);margin-top:1.8mm;display:block;letter-spacing:0.04em;}
+
+  /* ---------- 課題 ---------- */
+  .issues-sec{margin-bottom:10mm;}
+  .issues{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;}
+  .issue{text-align:center;}
+  .issue b{
+    display:block;font-size:11px;color:var(--crimson-deep);
+    margin-bottom:1.5mm;font-weight:700;
+  }
+  .issue span{font-size:9.8px;color:var(--ink-soft);line-height:1.55;}
+
+  /* ---------- サービス ---------- */
+  .service-sec{margin-bottom:10mm;}
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:5mm 8mm;}
+  .pillar{display:grid;grid-template-columns:9mm 1fr;gap:3mm;align-items:start;}
+  .pillar .no{
+    display:flex;align-items:center;justify-content:center;
+    width:9mm;height:9mm;border:1.5px solid var(--crimson);
+    color:var(--crimson);font-size:11px;font-weight:700;
+  }
+  .pillar h3{margin:0 0 1.2mm;font-size:12px;font-weight:700;line-height:1.3;}
+  .pillar p{font-size:10px;color:var(--ink-soft);line-height:1.6;}
+
+  /* ---------- 強み ---------- */
+  .strength-sec{margin-bottom:10mm;}
+  .strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;}
+  .strength{border-top:2px solid var(--crimson);padding-top:3mm;}
+  .strength .tag{
+    font-size:8px;letter-spacing:0.14em;color:var(--crimson);
+    font-weight:700;display:block;margin-bottom:1.5mm;
+  }
+  .strength h3{margin:0 0 2mm;font-size:11.5px;font-weight:700;line-height:1.45;}
+  .strength p{font-size:9.8px;color:var(--ink-soft);line-height:1.6;}
+
+  /* ---------- フロー ---------- */
+  .flow-sec{margin-bottom:10mm;}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;}
+  .step{text-align:center;position:relative;padding:0 1.5mm;}
+  .step + .step::before{
+    content:"";position:absolute;left:0;top:4.5mm;
+    width:0;height:0;border-left:1.6mm solid var(--crimson);
+    border-top:1.2mm solid transparent;border-bottom:1.2mm solid transparent;
+    transform:translateX(-50%);
+  }
+  .step .n{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:9mm;height:9mm;border-radius:50%;background:var(--crimson-wash);
+    color:var(--crimson);font-size:11px;font-weight:700;margin-bottom:2mm;
+  }
+  .step h4{margin:0 0 0.8mm;font-size:10px;font-weight:700;}
+  .step p{font-size:8.6px;color:var(--ink-soft);line-height:1.5;}
+
+  /* ---------- フッター ---------- */
+  .foot{margin-top:auto;margin-bottom:0;}
+  .cta{
+    background:var(--crimson);color:#fff;
+    padding:5mm 7mm;display:flex;align-items:center;
+    justify-content:space-between;gap:6mm;margin:0 -15mm;
+  }
+  .cta .cta-text{padding-left:8mm;}
+  .cta .cta-text strong{display:block;font-size:12.5px;font-weight:700;margin-bottom:1mm;}
+  .cta .cta-text span{font-size:9.2px;color:rgba(255,255,255,0.85);}
+  .cta .mail{
+    background:#fff;color:var(--crimson);margin-right:8mm;
+    padding:2.6mm 6mm;font-weight:700;text-decoration:none;
+    font-size:11.5px;letter-spacing:0.02em;white-space:nowrap;
+  }
+  .company-line{
+    text-align:center;font-size:8.4px;color:var(--ink-faint);
+    padding:5mm 0 6mm;letter-spacing:0.02em;
+  }
+  .company-line b{color:var(--ink-soft);font-weight:600;}
+
+  @media print{
+    body{background:#fff;}
+    .page-scroll{padding:0;overflow:visible;}
+    .sheet{box-shadow:none;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    @page{size:A4;margin:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page-scroll">
+<div class="sheet">
+
+  <div class="topbar"></div>
+
+  <header class="head">
+    <p class="brand">株式会社琴線</p>
+    <h1>採用パートナー</h1>
+    <p class="en">Recruitment Partner Service</p>
+    <p class="catch">採ることも、続くことも。<br>一社ごとに向き合う、<em>採用代行</em>。</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><span class="num">約180<small>名/月</small></span><span class="label">月間応募数</span></div>
+    <div class="stat"><span class="num">約10<small>社</small></span><span class="label">提携企業数</span></div>
+    <div class="stat"><span class="num">全職種</span><span class="label">対応職種</span></div>
+    <div class="stat"><span class="num">全国</span><span class="label">対応エリア</span></div>
+  </div>
+
+  <section class="issues-sec">
+    <div class="sec-head"><h2>こんな採用課題はありませんか</h2><span class="en">Issues</span></div>
+    <div class="issues">
+      <div class="issue"><b>母集団が集まらない</b><span>選考に乗る前に<br>応募が止まる</span></div>
+      <div class="issue"><b>面接基準がバラバラ</b><span>面接官ごとに<br>評価が違う</span></div>
+      <div class="issue"><b>入社後に定着しない</b><span>早期離職で<br>コストが積み上がる</span></div>
+      <div class="issue"><b>採用に人手を割けない</b><span>現場と兼務で<br>対応が遅れる</span></div>
+    </div>
+  </section>
+
+  <section class="service-sec">
+    <div class="sec-head"><h2>採用に関わる業務を、一貫して代行</h2><span class="en">Service</span></div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="no">01</div>
+        <div>
+          <h3>母集団の形成</h3>
+          <p>自社の集客チャネルと提携ネットワークで、貴社の求人に合わせた応募母集団をつくります。</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="no">02</div>
+        <div>
+          <h3>面接の仕組み化</h3>
+          <p>選考基準・質問設計・評価の型を整え、面接官によるブレのない選考へ。</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="no">03</div>
+        <div>
+          <h3>採用実務の代行</h3>
+          <p>求人設計、スカウト、日程調整、候補者フォローまで実務を巻き取ります。</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="no">04</div>
+        <div>
+          <h3>教育・社員研修</h3>
+          <p>1社ごとにカスタマイズした研修で、入社後の定着まで支援します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strength-sec">
+    <div class="sec-head"><h2>選ばれる3つの理由</h2><span class="en">Strength</span></div>
+    <div class="strengths">
+      <div class="strength">
+        <span class="tag">01</span>
+        <h3>集めるところまで、<br>自分たちで実行する</h3>
+        <p>提案で終わるコンサルではなく、母集団づくりを実働で代行します。</p>
+      </div>
+      <div class="strength">
+        <span class="tag">02</span>
+        <h3>採用の「仕組み」が、<br>貴社に残る</h3>
+        <p>支援が終わったあとも自走できる採用体制を前提に設計します。</p>
+      </div>
+      <div class="strength">
+        <span class="tag">03</span>
+        <h3>採って終わりではなく、<br>辞めない採用へ</h3>
+        <p>研修まで自社対応。エンジニア職は現在も離職者ゼロの実績です。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow-sec">
+    <div class="sec-head"><h2>ご支援の流れ</h2><span class="en">Flow</span></div>
+    <div class="flow">
+      <div class="step"><span class="n">1</span><h4>ヒアリング</h4><p>採用課題・人物像</p></div>
+      <div class="step"><span class="n">2</span><h4>求人設計</h4><p>訴求と募集条件</p></div>
+      <div class="step"><span class="n">3</span><h4>母集団形成</h4><p>自社・提携網で集客</p></div>
+      <div class="step"><span class="n">4</span><h4>選考支援</h4><p>面接設計・フォロー</p></div>
+      <div class="step"><span class="n">5</span><h4>入社・定着</h4><p>研修で定着支援</p></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <p class="company-line">
+      <b>株式会社琴線</b>　／　人材紹介・AI研修・イベント事業　／　鳥取発、全国オンライン対応
+    </p>
+    <div class="cta">
+      <div class="cta-text">
+        <strong>まずは、貴社の採用課題をお聞かせください</strong>
+        <span>現状をうかがい、どこから着手すべきかをご提案します。ご相談は無料です。</span>
+      </div>
+      <a class="mail" href="mailto:office@kinsen-info.com">office@kinsen-info.com</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>
